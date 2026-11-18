@@ -369,3 +369,178 @@ body > main {
     min-height: 44px;
   }
 }
+
+/* Counter: approved requests as order tickets on a rail */
+#campus-stores .tagid {
+  font: 600 12.5px/1 ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  letter-spacing: 0.02em;
+}
+#campus-stores .rail {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+  align-items: start;
+}
+#campus-stores .ticket {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--sel);
+  border-radius: 4px 4px 10px 10px;
+  box-shadow: 0 8px 18px -14px rgb(0 0 0 / 0.45);
+  padding: 12px 14px;
+}
+#campus-stores .ticket.hot {
+  border-top-color: var(--mark);
+}
+#campus-stores .ticket.done {
+  border-top-color: var(--line);
+  opacity: 0.65;
+}
+#campus-stores .ticket header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2px 8px;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed var(--line);
+}
+#campus-stores .ticket h3,
+#campus-stores .ticket header > small:last-child {
+  grid-column: 1/-1;
+}
+#campus-stores .ticket h3 {
+  font-size: 17px;
+  letter-spacing: -0.02em;
+  margin-top: 4px;
+}
+#campus-stores .ticket ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#campus-stores .ticket li {
+  display: grid;
+  grid-template-columns: 14px minmax(0, 1fr) auto;
+  gap: 8px;
+  align-items: center;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--line);
+}
+#campus-stores .ticket li::before {
+  font-weight: 700;
+  text-align: center;
+  color: var(--quiet);
+}
+#campus-stores .ticket li small {
+  display: block;
+}
+#campus-stores .todo::before {
+  content: "○";
+}
+#campus-stores .out::before {
+  content: "●";
+  color: var(--sel) !important;
+}
+#campus-stores .back::before {
+  content: "✓";
+  color: var(--oktxt) !important;
+}
+#campus-stores .back > span {
+  color: var(--quiet);
+}
+#campus-stores .out.late::before,
+#campus-stores .out.now::before {
+  content: "!";
+  color: var(--mark) !important;
+}
+#campus-stores :is(.late, .now) small {
+  color: var(--mark);
+  font-weight: 600;
+}
+#campus-stores .ticket li.todo {
+  grid-template-columns: 14px minmax(0, 1fr);
+  row-gap: 6px;
+}
+#campus-stores .todo select {
+  grid-column: 2;
+}
+#campus-stores .ticket li.check {
+  display: block;
+  border-bottom: 0;
+}
+#campus-stores .check form {
+  background: var(--desk);
+  border-left: 3px solid var(--mark);
+  padding: 10px 11px;
+  display: grid;
+  gap: 8px;
+}
+#campus-stores .check :is(label, details) {
+  display: grid;
+  gap: 3px;
+  font-size: 13px;
+  font-weight: 600;
+}
+#campus-stores .check .buttons {
+  margin: 0;
+}
+#campus-stores .check details[open] {
+  gap: 8px;
+}
+#campus-stores .check summary {
+  font-size: 12px;
+}
+#campus-stores .handout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px;
+  align-items: end;
+  padding-top: 10px;
+}
+#campus-stores .handout label {
+  font-size: 13px;
+  font-weight: 600;
+}
+#campus-stores .handout select {
+  width: 100%;
+}
+#campus-stores .reqnote {
+  margin: 10px 0 0;
+  font-size: 12.5px;
+  color: var(--quiet);
+}
+#campus-stores .ticket blockquote {
+  margin: 10px 0 0;
+  padding: 8px 10px;
+  background: var(--memo);
+  color: var(--memotxt);
+  border-radius: 6px;
+  font-size: 13px;
+  display: grid;
+  gap: 4px;
+}
+#campus-stores .ticket blockquote small {
+  color: inherit;
+  font-weight: 650;
+}
+#campus-stores .ticket blockquote button {
+  justify-self: start;
+  margin-top: 4px;
+}
+#campus-stores .ticket ol {
+  margin-top: 6px;
+}
+#campus-stores .ticket blockquote.quiet {
+  display: block;
+  background: transparent;
+  color: var(--quiet);
+  padding: 0;
+  margin-top: 6px;
+  font-size: 12.5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#campus-stores .ticket blockquote.quiet small {
+  margin-right: 6px;
+}
